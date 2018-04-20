@@ -6,7 +6,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
         <Text>Open up App.js to start working on your app!</Text>
-        <Text>zhao yi ze</Text>
+        <Text>yang ming tian</Text>
       </View>
     );
   }
