@@ -2,7 +2,24 @@
   "presets": ["babel-preset-expo"],
   "env": {
     "development": {
-      "plugins": ["transform-react-jsx-source"]
+      "plugins": [
+        "transform-react-jsx-source", ["module-resolver", {
+          "extensions": [
+            ".md",
+            ".js",
+            ".ios.js",
+            ".android.js"
+          ],
+          "alias": {
+            "@assets": "./src/assets",
+            "@features": "./src/features",
+            "@common": "./src/common",
+            "@config": "./src/config",
+            "@services": "./src/services"
+          }
+          }],
+          ["import", { "libraryName": "antd-mobile" }]
+        ]
+      }
     }
   }
-}

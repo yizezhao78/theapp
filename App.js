@@ -28,5 +28,17 @@ export default StackNavigator(
   },
   {
     initialRouteName: 'Home',
+    navigationOptions: {
+      headerStyle: {
+          backgroundColor: 'white',
+      },
+      headerTitleStyle: {
+          color: '#000',
+      },
+      headerBackTitleStyle: {
+          color: '#ff4004',
+      },
+      headerTintColor: '#ff4004',
+    }
   }
 );
