@@ -3,6 +3,7 @@ import { View, Text, WebView, Alert } from 'react-native';
 import  Remarkable from 'remarkable';
 import { Drawer, List, NavBar, Icon, Button } from 'antd-mobile';
 var xxscData = require('../xxsc_data_js/data.js');
+var menuData = require('../xxsc_data_js/menu.js');
 
 class ReaderScreen extends React.Component {
   static navigationOptions = {
@@ -10,17 +11,19 @@ class ReaderScreen extends React.Component {
   };
   state = {
     open: false,
-    source: 'jian_jie'
+    source: 'README'
   }
   onOpenChange = (...args) => {
     this.setState({ open: !this.state.open });
   }
 
   onSouceChangeRequest = (source) => {
-
+    this.setState({
+      source: menuData["menuData"][source],
+      open: false
+    })
   }
   render() {
-    console.log(xxscData)
     var data = xxscData[this.state.source]
     var md = new Remarkable();
     //把markdown转换成html
@@ -30,19 +33,22 @@ class ReaderScreen extends React.Component {
     const sidebar = (
       <List>
         {
-          ['前言', '简介'].map((i, index) => {
+          Object.keys(menuData["menuData"]).map((i, index) => {
             if (index === 0) {
               return (
                 <List.Item
                   key={index}
                   thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png"
                   multipleLine
-                  >{i}</List.Item>
+                  onClick={()=>{this.onSouceChangeRequest(i)}}
+                  >{i}
+                </List.Item>
               );
             } else {
               return (
                 <List.Item
                   key={index}
+                  onClick={()=>{this.onSouceChangeRequest(i)}}
                   thumb="https://zos.alipayobjects.com/rmsportal/eOZidTabPoEbPeU.png">
                   {i}
                 </List.Item>
