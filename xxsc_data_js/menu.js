@@ -1,0 +1,1 @@
+export const menuData ={"CSSA简介":"README","Table of contents":"SUMMARY","档案":"lai_mei_zhi_qian_dang_an","签证":"lai_mei_zhi_qian_qian_zheng","体检":"lai_mei_zhi_qian_ti_jian","学术":"lai_mei_zhi_qian_xue_shu","住宿":"lai_mei_zhi_qian_zhu_su"}
