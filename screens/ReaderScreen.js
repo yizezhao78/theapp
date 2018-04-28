@@ -27,8 +27,8 @@ class ReaderScreen extends React.Component {
     var data = xxscData[this.state.source]
     var md = new Remarkable();
     //把markdown转换成html
-    var data = md.render(data);
-    //防止zoom in
+    var data = `<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0"> `+ md.render(data);
+    console.log(data);
 
     const sidebar = (
       <List>
