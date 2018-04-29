@@ -11,7 +11,7 @@ class ReaderScreen extends React.Component {
   };
   state = {
     open: false,
-    source: 'README'
+    source: 'wind_Desktop_Developer_cssa_xxsc_README'
   }
   onOpenChange = (...args) => {
     this.setState({ open: !this.state.open });
@@ -26,9 +26,21 @@ class ReaderScreen extends React.Component {
   render() {
     var data = xxscData[this.state.source]
     var md = new Remarkable();
+    md.renderer.rules.image = (function() {
+  var original = md.renderer.rules.image;
+  return function(tokens, idx) {
+    var href = Remarkable.utils.escapeHtml(tokens[idx].src);
+    var alt = Remarkable.utils.escapeHtml(tokens[idx].alt);
+    //var imgOutput = original.apply(this, arguments);
+    var customizeImgOutput = `<img src="file://ios_assets/xxsc_data/.gitbook/assets/m2w690hq92lt_h_large_611w_5f3d0005a5022f75.png"alt="${alt}"/>`;
+    console.log(customizeImgOutput)
+    return customizeImgOutput;
+  };
+})();
+    md.block.ruler.disable([ 'code' ]);
     //把markdown转换成html
     var data = `<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0"> `+ md.render(data);
-    console.log(data);
+    //console.log(data);
 
     const sidebar = (
       <List>
@@ -74,6 +86,7 @@ class ReaderScreen extends React.Component {
           <WebView
             source={{html: data}}
             style={{flex:1}}
+            allowUniversalAccessFromFileURLs={true}
             />
         </Drawer>
 
