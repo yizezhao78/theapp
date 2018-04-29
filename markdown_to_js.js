@@ -1,11 +1,52 @@
 var fs = require('fs');
 
-var walkPath = '/Users/timeswind/Desktop/Developer/cssa_xxsc';
+var walkPath = './cssa_xxsc';
+var walkImagePath = './cssa_xxsc/.gitbook/assets'
 var fileList = [];
+var imageList = [];
 var fileData = '';
 var fileDataForWWMP = ''; //微信小程序数据格式
 var menuData = {};
+var imageData = {};
 var exportDataForWWMP = 'module.exports = { \n';
+
+var walkImage = function (dir, done) {
+  fs.readdir(dir, function (error, list) {
+    if (error) {
+      return done(error);
+    }
+
+    var i = 0;
+
+    (function next () {
+      var file = list[i++];
+      var filename = file;
+      if (!file) {
+        return done(null);
+      }
+        file = dir + '/' + file;
+
+        fs.stat(file, function (error, stat) {
+          if (filename !== '.git') {
+            if (stat && stat.isDirectory()) {
+              walk(file, function (error) {
+                next();
+              });
+            } else {
+              if (filename !== '.DS_Store') {
+                imageList.push(filename)
+              }
+              next();
+            }
+          } else {
+            next()
+          }
+        });
+      // }
+    })();
+  });
+};
+
 var walk = function (dir, done) {
   fs.readdir(dir, function (error, list) {
     if (error) {
@@ -26,7 +67,6 @@ var walk = function (dir, done) {
         file = dir + '/' + file;
 
         fs.stat(file, function (error, stat) {
-          console.log(filename == '.git')
           if (filename !== '.git' && filename !== '.gitbook') {
             if (stat && stat.isDirectory()) {
               walk(file, function (error) {
@@ -106,6 +146,25 @@ var writeFile = function () {
   });
 }
 
+var writeImageExportModuleForRN = function () {
+  var data = 'const images = {'
+  for (var i=0;i<imageList.length;i++) {
+    var imageName = imageList[i]
+    if (i == 0) {
+      data = data + `'${imageName}':require('../cssa_xxsc/.gitbook/assets/${imageName}')`
+    } else {
+      data = data + `, \n'${imageName}':require('${imageName}')`
+    }
+  }
+  data = data + '}\n export default images;'
+  fs.writeFile("./xxsc_data_js/image.js", data, function(err) {
+    if (err) {
+      return console.log(err);
+      console.log("finished writing imageModuleForRN")
+    }
+  });
+}
+
 process.argv.forEach(function (val, index, array) {
   if (val.indexOf('source') !== -1) {
     walkPath = val.split('=')[1];
@@ -132,5 +191,13 @@ walk(walkPath, function(error) {
         console.log('finished. reading');
         console.log('-------------------------------------------------------------');      }
     });
+  }
+});
+
+walkImage(walkImagePath, function(error) {
+  if (error) {
+    throw error;
+  } else {
+    writeImageExportModuleForRN()
   }
 });

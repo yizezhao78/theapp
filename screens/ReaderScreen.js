@@ -9,8 +9,19 @@ import images from './image.js';
 
 const markdownStyles = {
   heading1: {
-    fontSize: 24,
-    color: 'purple',
+    fontSize: 26,
+    color: '#000',
+    fontWeight: 'bold'
+  },
+  heading2: {
+    fontWeight: 'bold',
+    fontSize: 22,
+    paddingVertical: 8
+  },
+  heading3: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    paddingVertical: 8
   },
   link: {
     color: 'pink',
@@ -19,7 +30,6 @@ const markdownStyles = {
     color: 'orange',
   },
   text: {
-    padding: 10,
     color: '#000',
     lineHeight: 30,
     fontSize: 13
@@ -31,7 +41,7 @@ class ReaderScreen extends React.Component {
   };
   state = {
     open: false,
-    source: 'wind_Desktop_Developer_cssa_xxsc_README'
+    source: menuData["menuData"][Object.keys(menuData["menuData"])[0]]
   }
   onOpenChange = (...args) => {
     this.setState({ open: !this.state.open });
@@ -100,14 +110,17 @@ class ReaderScreen extends React.Component {
                 image: {
                   react: (node, output, state) => (
                     <Image
+                      style={{
+                        resizeMode: Image.resizeMode.center,
+                      }}
                       key={state.key}
                       source={images[node.target]}
-                    />
+                      />
                   ),
                 },
               }}
-            >
-            {data}
+              >
+              {data}
             </Markdown>
           </ScrollView>
         </Drawer>
