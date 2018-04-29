@@ -1,6 +1,6 @@
 var fs = require('fs');
 
-var walkPath = '/Users/timeswind/Desktop/Developer/cssa_xxsc';
+var walkPath = './xxsc_data';
 var fileList = [];
 var fileData = '';
 var fileDataForWWMP = ''; //微信小程序数据格式
@@ -16,33 +16,24 @@ var walk = function (dir, done) {
 
     (function next () {
       var file = list[i++];
-      var filename = file;
+
       if (!file) {
         return done(null);
       }
-      // if (file === '.DS_Store') {
-      //   console.log('ignore')
-      // } else {
-        file = dir + '/' + file;
 
-        fs.stat(file, function (error, stat) {
-          console.log(filename == '.git')
-          if (filename !== '.git' && filename !== '.gitbook') {
-            if (stat && stat.isDirectory()) {
-              walk(file, function (error) {
-                next();
-              });
-            } else {
-              if (filename !== '.DS_Store') {
-                fileList.push(file)
-              }
-              next();
-            }
-          } else {
-            next()
-          }
-        });
-      // }
+      file = dir + '/' + file;
+
+      fs.stat(file, function (error, stat) {
+
+        if (stat && stat.isDirectory()) {
+          walk(file, function (error) {
+            next();
+          });
+        } else {
+          fileList.push(file)
+          next();
+        }
+      });
     })();
   });
 };
