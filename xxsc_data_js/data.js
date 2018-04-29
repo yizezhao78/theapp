@@ -1,10 +1,12 @@
 
-export const README = ` 
+export const wind_Desktop_Developer_cssa_xxsc_README = ` 
 # CSSA简介
+
+![PSU CSSA](.gitbook/assets/m2w690hq92lt_h_large_611w_5f3d0005a5022f75.png)
 
 ## I.概况
 
-
+  
 CSSA 全称为 Chinese Students and Scholars Association,是全美高校中最大最具影响力的中国学生组织。PSU CSSA 作为全美 CSSA 大家庭的有机组成部分,自 2001 年创建至今已有 16 年的历史。
 
 PSU CSSA 的宗旨是服务全体中国留学生和学者, 增进团结和友谊, 丰富业余生活, 扩大中国文化在校园中的影响, 最终达到增进中美两国、以及和其他国家青年人间 友谊的目的。在 CSSA 存在的这 16 年里,我们可以自豪地说我们完美地完成了我们 的任务,曾连续三年被学校评为 Penn State 最具影响力的学生组织\(Outstanding Student Organization Award\),2011 年中秋文化节更是获得 Outstanding Program of the Year,成为全校唯一获得杰出奖项的国际学生组织,更成为 PSU 全校唯一一个同时获得两项荣誉的学生组织。PSU CSSA 的成功是 PSU 华人活跃的体现,也是学校对中国学生学者整体素质的认可。欢迎大家加入我们 CSSA 的大家庭,共同谱写 CSSA 新的华美篇章!
@@ -21,9 +23,9 @@ PSU CSSA 的宗旨是服务全体中国留学生和学者, 增进团结和友谊
 
 财务部\(Treasury Department\)
 
-活动策划部\(Culture Events Department\)
+活动策划部\(Culture Events Department\) 
 
-文体娱乐部\(Recreation & Sports Department\)
+文体娱乐部\(Recreation & Sports Department\) 
 
 学术发展部\(Intellectual Development Department\)
 
@@ -40,8 +42,11 @@ Thon部（Thon Department\)
 ### 3. Members
 
 CSSA 把每一个有中华血统的、或对中国文化持友好态度的和对中华文化感兴趣 的个人都当成我们的一份子,不向 members 收取 membership 费用。每个热心于 中国社区生存和发展的朋友们都可以以自己多种多样的形式加入到 CSSA 中来。 我们 也需要越来越多的志愿者的付出和支持, 来把 Penn State 的华人文化社 区建设的更加美好和谐。
+
+
+
 `
-export const SUMMARY = ` 
+export const wind_Desktop_Developer_cssa_xxsc_SUMMARY = ` 
 # Table of contents
 
 * [CSSA简介](README.md)
@@ -60,7 +65,7 @@ export const SUMMARY = `
   * Orientation
 
 `
-export const lai_mei_zhi_qian_dang_an = ` 
+export const wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_dang_an = ` 
 # 档案
 
 建议在教育部留学服务中心长期存档，办理流程如下：
@@ -88,7 +93,7 @@ export const lai_mei_zhi_qian_dang_an = `
 2. 完成申请后，留学服务中心会开具「存档卡」、「调档通知单」，存档人员凭「调档通知单」到原档案保管机构调转档案，可由本人将密封完好的档案自带或由原档案保管机构通过机要直接寄至留学服务中心
 
 `
-export const lai_mei_zhi_qian_qian_zheng = ` 
+export const wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_qian_zheng = ` 
 # 签证
 
 ### 必备材料：
@@ -213,7 +218,7 @@ _**（签证时先交予交材料窗口，后直接交予签证官的材料）**
 orientation期间完成 ）。如果没有办法做到，你的状态会出现问题，严重影响到以后的学习生活，很有可能会被要求离境再入境。 
 
 `
-export const lai_mei_zhi_qian_ti_jian = ` 
+export const wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_ti_jian = ` 
 # 体检
 
 1. 准备好相关材料：
@@ -247,7 +252,7 @@ export const lai_mei_zhi_qian_ti_jian = `
 【温馨提示】因为有的疫苗不能同时打或者需要打好几剂，所以会用上几个月的时间，建议及早的开始准备。强烈建议大家在国内把所有的疫苗打完，如果实在没打完，可以等到了Penn State在校医院\(Student Health Center\)补打，保险一般包含其费用
 
 `
-export const lai_mei_zhi_qian_xue_shu = ` 
+export const wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_xue_shu = ` 
 # 学术
 
 iStart  
@@ -272,21 +277,12 @@ Lionpath  （替换原先使用的elion）
 
 ◇ 进入Lionpath主页面，主要由六个部分组成：
 
-     1. 第一部分是背景图为PENN STATE标志石狮作底的栏目。Holds一般陈列出在作出某种操作前必须填写的申请表和调查，是校方用来控制学生选课或者转出学校成绩单的政策。To Do List 是用来核对个人信息的。
+1. 第一部分是背景图为PENN STATE标志石狮作底的栏目。Holds一般陈列出在作出某种操作前必须填写的申请表和调查，是校方用来控制学生选课或者转出学校成绩单的政策。To Do List 是用来核对个人信息的。Communication 则是学校通知区域。
+2. 二部分是Quick Link，罗列了大量学生常用的页面。
+3. 第三，四部分分别是是My Class Schedule和My Grade，可以查看目前所选的课和成绩。
+4. 剩下的两个部分分别是Academic Calender，Enrollment date，分别是校方的校方时间表和注册日期。
 
-Communication 则是学校通知区域。
-
-     2. 第二部分是Quick Link，罗列了大量学生常用的页
-
-面。
-
-     3. 第三，四部分分别是是My Class Schedule和My 
-
-Grade，可以查看目前所选的课和成绩。
-
-     4. 剩下的两个部分分别是Academic Calender，Enrollment date，分别是校方的校方时间表和注册日期。
-
-          ◇ 主页面顶有四个选项。分别是主页，Academics，Finaces和My Information。Academic部分里面会显示已经注册的课程和所有关于课程的资料。Finances部分会显示现在的bill，可以用来交学费。My Information里面会显示你的个人信息，需要随时保持更新。
+◇ 主页面顶有四个选项。分别是主页，Academics，Finaces和My Information。Academic部分里面会显示已经注册的课程和所有关于课程的资料。Finances部分会显示现在的bill，可以用来交学费。My Information里面会显示你的个人信息，需要随时保持更新。
 
 ◇ 选课方法
 
@@ -325,7 +321,7 @@ Research Activites：关于学校Research的详细功能；
 【温馨提示】以上所有步骤都可以在选课日期前完成。选课当天12：00整只要按下“Enroll”，就选课成功了。
 
 `
-export const lai_mei_zhi_qian_zhu_su = ` 
+export const wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_zhu_su = ` 
 # 住宿
 
 校内住宿

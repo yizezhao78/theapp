@@ -1,0 +1,3 @@
+[submodule "cssa_xxsc"]
+	path = cssa_xxsc
+	url = https://github.com/timeswind/cssa_xxsc

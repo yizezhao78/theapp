@@ -1,6 +1,8 @@
 
-var README = ` 
+var wind_Desktop_Developer_cssa_xxsc_README = ` 
 # CSSA简介
+
+![PSU CSSA](.gitbook/assets/m2w690hq92lt_h_large_611w_5f3d0005a5022f75.png)
 
 ## I.概况
 
@@ -44,7 +46,7 @@ CSSA 把每一个有中华血统的、或对中国文化持友好态度的和对
 
 
 `
-var SUMMARY = ` 
+var wind_Desktop_Developer_cssa_xxsc_SUMMARY = ` 
 # Table of contents
 
 * [CSSA简介](README.md)
@@ -63,7 +65,7 @@ var SUMMARY = `
   * Orientation
 
 `
-var lai_mei_zhi_qian_dang_an = ` 
+var wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_dang_an = ` 
 # 档案
 
 建议在教育部留学服务中心长期存档，办理流程如下：
@@ -91,7 +93,7 @@ var lai_mei_zhi_qian_dang_an = `
 2. 完成申请后，留学服务中心会开具「存档卡」、「调档通知单」，存档人员凭「调档通知单」到原档案保管机构调转档案，可由本人将密封完好的档案自带或由原档案保管机构通过机要直接寄至留学服务中心
 
 `
-var lai_mei_zhi_qian_qian_zheng = ` 
+var wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_qian_zheng = ` 
 # 签证
 
 ### 必备材料：
@@ -216,7 +218,7 @@ _**（签证时先交予交材料窗口，后直接交予签证官的材料）**
 orientation期间完成 ）。如果没有办法做到，你的状态会出现问题，严重影响到以后的学习生活，很有可能会被要求离境再入境。 
 
 `
-var lai_mei_zhi_qian_ti_jian = ` 
+var wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_ti_jian = ` 
 # 体检
 
 1. 准备好相关材料：
@@ -250,7 +252,7 @@ var lai_mei_zhi_qian_ti_jian = `
 【温馨提示】因为有的疫苗不能同时打或者需要打好几剂，所以会用上几个月的时间，建议及早的开始准备。强烈建议大家在国内把所有的疫苗打完，如果实在没打完，可以等到了Penn State在校医院\(Student Health Center\)补打，保险一般包含其费用
 
 `
-var lai_mei_zhi_qian_xue_shu = ` 
+var wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_xue_shu = ` 
 # 学术
 
 iStart  
@@ -280,7 +282,7 @@ Lionpath  （替换原先使用的elion）
 3. 第三，四部分分别是是My Class Schedule和My Grade，可以查看目前所选的课和成绩。
 4. 剩下的两个部分分别是Academic Calender，Enrollment date，分别是校方的校方时间表和注册日期。
 
-          ◇ 主页面顶有四个选项。分别是主页，Academics，Finaces和My Information。Academic部分里面会显示已经注册的课程和所有关于课程的资料。Finances部分会显示现在的bill，可以用来交学费。My Information里面会显示你的个人信息，需要随时保持更新。
+◇ 主页面顶有四个选项。分别是主页，Academics，Finaces和My Information。Academic部分里面会显示已经注册的课程和所有关于课程的资料。Finances部分会显示现在的bill，可以用来交学费。My Information里面会显示你的个人信息，需要随时保持更新。
 
 ◇ 选课方法
 
@@ -319,7 +321,7 @@ Research Activites：关于学校Research的详细功能；
 【温馨提示】以上所有步骤都可以在选课日期前完成。选课当天12：00整只要按下“Enroll”，就选课成功了。
 
 `
-var lai_mei_zhi_qian_zhu_su = ` 
+var wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_zhu_su = ` 
 # 住宿
 
 校内住宿
@@ -358,10 +360,10 @@ DAYS INN酒店
 
 `
 module.exports = { 
-'README':README, 
-'SUMMARY':SUMMARY, 
-'lai_mei_zhi_qian_dang_an':lai_mei_zhi_qian_dang_an, 
-'lai_mei_zhi_qian_qian_zheng':lai_mei_zhi_qian_qian_zheng, 
-'lai_mei_zhi_qian_ti_jian':lai_mei_zhi_qian_ti_jian, 
-'lai_mei_zhi_qian_xue_shu':lai_mei_zhi_qian_xue_shu, 
-'lai_mei_zhi_qian_zhu_su':lai_mei_zhi_qian_zhu_su}
+'wind_Desktop_Developer_cssa_xxsc_README':wind_Desktop_Developer_cssa_xxsc_README, 
+'wind_Desktop_Developer_cssa_xxsc_SUMMARY':wind_Desktop_Developer_cssa_xxsc_SUMMARY, 
+'wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_dang_an':wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_dang_an, 
+'wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_qian_zheng':wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_qian_zheng, 
+'wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_ti_jian':wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_ti_jian, 
+'wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_xue_shu':wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_xue_shu, 
+'wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_zhu_su':wind_Desktop_Developer_cssa_xxsc_lai_mei_zhi_qian_zhu_su}
