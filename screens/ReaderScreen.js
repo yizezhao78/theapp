@@ -33,6 +33,9 @@ class ReaderScreen extends React.Component {
 =======
     var data = `<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0"> `+ md.render(data);
     console.log(data);
+<<<<<<< HEAD
+>>>>>>> parent of 4f71a69... before eject
+=======
 >>>>>>> parent of 4f71a69... before eject
 
     const sidebar = (

@@ -29,7 +29,10 @@ var walk = function (dir, done) {
           });
         } else {
 <<<<<<< HEAD
+<<<<<<< HEAD
           // do stuff to file here
+=======
+>>>>>>> parent of 4f71a69... before eject
 =======
 >>>>>>> parent of 4f71a69... before eject
           fileList.push(file)
