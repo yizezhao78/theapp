@@ -1,4 +1,5 @@
-export const README = `
+
+export const README = ` 
 # CSSA简介
 
 ![PSU CSSA](.gitbook/assets/m2w690hq92lt_h_large_611w_5f3d0005a5022f75.png)
@@ -41,11 +42,8 @@ Thon部（Thon Department\)
 ### 3. Members
 
 CSSA 把每一个有中华血统的、或对中国文化持友好态度的和对中华文化感兴趣 的个人都当成我们的一份子,不向 members 收取 membership 费用。每个热心于 中国社区生存和发展的朋友们都可以以自己多种多样的形式加入到 CSSA 中来。 我们 也需要越来越多的志愿者的付出和支持, 来把 Penn State 的华人文化社 区建设的更加美好和谐。
-
-
-
 `
-export const SUMMARY = `
+export const SUMMARY = ` 
 # Table of contents
 
 * [CSSA简介](README.md)
@@ -64,7 +62,7 @@ export const SUMMARY = `
   * Orientation
 
 `
-export const lai_mei_zhi_qian_dang_an = `
+export const lai_mei_zhi_qian_dang_an = ` 
 # 档案
 
 建议在教育部留学服务中心长期存档，办理流程如下：
@@ -73,7 +71,7 @@ export const lai_mei_zhi_qian_dang_an = `
 
 请登录中国留学网[www.cscse.edu.cn](http://www.cscse.edu.cn) ，进入「留学存档 」栏目，点击「在线申请」，并将填写好的「存档人员登记表」打印一份
 
-需提交的材料：
+需提交的材料：   
 
 　1）「存档人员登记表」一份
 
@@ -92,7 +90,7 @@ export const lai_mei_zhi_qian_dang_an = `
 2. 完成申请后，留学服务中心会开具「存档卡」、「调档通知单」，存档人员凭「调档通知单」到原档案保管机构调转档案，可由本人将密封完好的档案自带或由原档案保管机构通过机要直接寄至留学服务中心
 
 `
-export const lai_mei_zhi_qian_qian_zheng = `
+export const lai_mei_zhi_qian_qian_zheng = ` 
 # 签证
 
 ### 必备材料：
@@ -137,7 +135,7 @@ _**（签证时先交予交材料窗口，后直接交予签证官的材料）**
 
      3. 填到step8时，会出现选择付款选项（160 美），
 
-共有三种方式可以支付
+共有三种方式可以支付   
 
  ◇ 在线借记卡缴纳
 
@@ -147,7 +145,7 @@ _**（签证时先交予交材料窗口，后直接交予签证官的材料）**
 
 点击会生成申请人CGI参考号码，用此号码支付签证费。
 
-支付完成后，系统将为您创建个人资料，请务必妥善保管收据，以便通过收据编号预约签证面谈。
+支付完成后，系统将为您创建个人资料，请务必妥善保管收据，以便通过收据编号预约签证面谈。  
 
 
 ### 【温馨提示1】
@@ -214,10 +212,10 @@ _**（签证时先交予交材料窗口，后直接交予签证官的材料）**
 
 的唯一条件就是，参加international student orientation。和完成DISSA online document check-in（会在
 
-orientation期间完成 ）。如果没有办法做到，你的状态会出现问题，严重影响到以后的学习生活，很有可能会被要求离境再入境。
+orientation期间完成 ）。如果没有办法做到，你的状态会出现问题，严重影响到以后的学习生活，很有可能会被要求离境再入境。 
 
 `
-export const lai_mei_zhi_qian_ti_jian = `
+export const lai_mei_zhi_qian_ti_jian = ` 
 # 体检
 
 1. 准备好相关材料：
@@ -251,10 +249,10 @@ export const lai_mei_zhi_qian_ti_jian = `
 【温馨提示】因为有的疫苗不能同时打或者需要打好几剂，所以会用上几个月的时间，建议及早的开始准备。强烈建议大家在国内把所有的疫苗打完，如果实在没打完，可以等到了Penn State在校医院\(Student Health Center\)补打，保险一般包含其费用
 
 `
-export const lai_mei_zhi_qian_xue_shu = `
+export const lai_mei_zhi_qian_xue_shu = ` 
 # 学术
 
-iStart
+iStart  
 
 ◇ 网址：http://istart.gp.psu.edu
 
@@ -320,10 +318,12 @@ Research Activites：关于学校Research的详细功能；
 【温馨提示】以上所有步骤都可以在选课日期前完成。选课当天12：00整只要按下“Enroll”，就选课成功了。
 
 `
-export const lai_mei_zhi_qian_zhu_su = `
+export const lai_mei_zhi_qian_zhu_su = ` 
 # 住宿
 
-校内住宿
+### 校内住宿
+
+![](../.gitbook/assets/warnock_commons_exterior_3.1.jpg)
 
 大一新生必须要住学校的宿舍，大家一定要在来美之前通过eLiving，http://www.eliving.psu.edu选好宿舍和食堂套餐（meal plan）。
 

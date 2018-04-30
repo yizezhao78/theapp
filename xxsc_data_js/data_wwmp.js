@@ -6,7 +6,7 @@ var README = `
 
 ## I.概况
 
-  
+
 CSSA 全称为 Chinese Students and Scholars Association,是全美高校中最大最具影响力的中国学生组织。PSU CSSA 作为全美 CSSA 大家庭的有机组成部分,自 2001 年创建至今已有 16 年的历史。
 
 PSU CSSA 的宗旨是服务全体中国留学生和学者, 增进团结和友谊, 丰富业余生活, 扩大中国文化在校园中的影响, 最终达到增进中美两国、以及和其他国家青年人间 友谊的目的。在 CSSA 存在的这 16 年里,我们可以自豪地说我们完美地完成了我们 的任务,曾连续三年被学校评为 Penn State 最具影响力的学生组织\(Outstanding Student Organization Award\),2011 年中秋文化节更是获得 Outstanding Program of the Year,成为全校唯一获得杰出奖项的国际学生组织,更成为 PSU 全校唯一一个同时获得两项荣誉的学生组织。PSU CSSA 的成功是 PSU 华人活跃的体现,也是学校对中国学生学者整体素质的认可。欢迎大家加入我们 CSSA 的大家庭,共同谱写 CSSA 新的华美篇章!
@@ -23,9 +23,9 @@ PSU CSSA 的宗旨是服务全体中国留学生和学者, 增进团结和友谊
 
 财务部\(Treasury Department\)
 
-活动策划部\(Culture Events Department\) 
+活动策划部\(Culture Events Department\)
 
-文体娱乐部\(Recreation & Sports Department\) 
+文体娱乐部\(Recreation & Sports Department\)
 
 学术发展部\(Intellectual Development Department\)
 
@@ -42,9 +42,6 @@ Thon部（Thon Department\)
 ### 3. Members
 
 CSSA 把每一个有中华血统的、或对中国文化持友好态度的和对中华文化感兴趣 的个人都当成我们的一份子,不向 members 收取 membership 费用。每个热心于 中国社区生存和发展的朋友们都可以以自己多种多样的形式加入到 CSSA 中来。 我们 也需要越来越多的志愿者的付出和支持, 来把 Penn State 的华人文化社 区建设的更加美好和谐。
-
-
-
 `
 var SUMMARY = ` 
 # Table of contents
@@ -324,7 +321,9 @@ Research Activites：关于学校Research的详细功能；
 var lai_mei_zhi_qian_zhu_su = ` 
 # 住宿
 
-校内住宿
+### 校内住宿
+
+![](../.gitbook/assets/warnock_commons_exterior_3.1.jpg)
 
 大一新生必须要住学校的宿舍，大家一定要在来美之前通过eLiving，http://www.eliving.psu.edu选好宿舍和食堂套餐（meal plan）。
 

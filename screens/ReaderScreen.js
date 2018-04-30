@@ -1,40 +1,12 @@
 import { createElement } from 'react'
 import React from 'react';
-import { View, Text, WebView, Alert, Image, ScrollView } from 'react-native';
+import { View, Text, WebView, Alert, Image, ScrollView, Dimensions } from 'react-native';
 import { Drawer, List, NavBar, Icon, Button } from 'antd-mobile';
 var xxscData = require('../xxsc_data_js/data.js');
 var menuData = require('../xxsc_data_js/menu.js');
-import Markdown from 'react-native-simple-markdown'
-import images from './image.js';
-
-const markdownStyles = {
-  heading1: {
-    fontSize: 26,
-    color: '#000',
-    fontWeight: 'bold'
-  },
-  heading2: {
-    fontWeight: 'bold',
-    fontSize: 22,
-    paddingVertical: 8
-  },
-  heading3: {
-    fontWeight: 'bold',
-    fontSize: 18,
-    paddingVertical: 8
-  },
-  link: {
-    color: 'pink',
-  },
-  mailTo: {
-    color: 'orange',
-  },
-  text: {
-    color: '#000',
-    lineHeight: 30,
-    fontSize: 13
-  }
-}
+import Remarkable from 'remarkable';
+import images from '../xxsc_data_js/image.js';
+import HTML from 'react-native-render-html';
 class ReaderScreen extends React.Component {
   static navigationOptions = {
     title: 'CSSA 新生手册',
@@ -54,14 +26,11 @@ class ReaderScreen extends React.Component {
     })
   }
   render() {
-    var data = xxscData[this.state.source]
-    const markDownRules = {
-      image: {
-        react: (node, output, state) => (
-          <Image source={{uri: "https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif"}} />
-        )
-      }
-    }
+    var originalMarkdownData = xxscData[this.state.source]
+    //把markdown转换成html
+    var md = new Remarkable();
+    var htmlContent = md.render(originalMarkdownData);
+    //再把html转成React Native Components
 
     const sidebar = (
       <List>
@@ -104,30 +73,31 @@ class ReaderScreen extends React.Component {
           >
           <Button onPressIn={()=> {this.onOpenChange()}}>目录</Button>
           <ScrollView style={{backgroundColor: "#fff", paddingHorizontal: 16}}>
-            <Markdown
-              styles={markdownStyles}
-              rules={{
-                image: {
-                  react: (node, output, state) => (
+            <HTML html={htmlContent} imagesMaxWidth={Dimensions.get('window').width}
+              renderers= {{
+                img: function(htmlAttribs, children, convertedCSSStyles, passProps = {}) {
+                  if (!htmlAttribs.src) {
+                    return false;
+                  }
+                  const { src, alt, width, height } = htmlAttribs;
+                  const splitList = src.split("/")
+                  const imageName = splitList[splitList.length - 1]
+                  return (
                     <Image
-                      style={{
-                        resizeMode: Image.resizeMode.center,
-                      }}
-                      key={state.key}
-                      source={images[node.target]}
+                      source={images[imageName]}
+                      alt={alt}
+                      style={{width: Dimensions.get('window').width - 32, height: 200, resizeMode: 'contain'}}
+                      {...passProps}
                       />
-                  ),
-                },
-              }}
-              >
-              {data}
-            </Markdown>
-          </ScrollView>
-        </Drawer>
+                  );
+                }
+              }} />
+            </ScrollView>
+          </Drawer>
 
-      </View>
-    );
+        </View>
+      );
+    }
   }
-}
 
-export default ReaderScreen;
+  export default ReaderScreen;

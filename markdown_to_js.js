@@ -153,7 +153,7 @@ var writeImageExportModuleForRN = function () {
     if (i == 0) {
       data = data + `'${imageName}':require('../cssa_xxsc/.gitbook/assets/${imageName}')`
     } else {
-      data = data + `, \n'${imageName}':require('${imageName}')`
+      data = data + `, \n'${imageName}':require('../cssa_xxsc/.gitbook/assets/${imageName}')`
     }
   }
   data = data + '}\n export default images;'
