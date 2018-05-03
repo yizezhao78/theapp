@@ -1,20 +1,27 @@
 import { createElement } from 'react'
 import React from 'react';
-import { View, Text, WebView, Alert, Image, ScrollView, Dimensions } from 'react-native';
+import { View, Text, WebView, Alert, Image, ScrollView, Dimensions, Button as NativeButton, Linking } from 'react-native';
 import { Drawer, List, NavBar, Icon, Button } from 'antd-mobile';
 var xxscData = require('../xxsc_data_js/data.js');
 var menuData = require('../xxsc_data_js/menu.js');
 import Remarkable from 'remarkable';
 import images from '../xxsc_data_js/image.js';
 import HTML from 'react-native-render-html';
+
 class ReaderScreen extends React.Component {
-  static navigationOptions = {
-    title: 'CSSA 新生手册',
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+    return { title: 'CSSA 新生手册', headerRight: <NativeButton title="目录" onPress={ typeof params.onOpenChange !== 'undefined' ? params.onOpenChange : ()=> {}}></NativeButton>};
   };
+
   state = {
     open: false,
     source: menuData["menuData"][Object.keys(menuData["menuData"])[0]]
   }
+  componentDidMount() {
+    this.props.navigation.setParams({ onOpenChange: this.onOpenChange });
+  }
+
   onOpenChange = (...args) => {
     this.setState({ open: !this.state.open });
   }
@@ -73,7 +80,9 @@ class ReaderScreen extends React.Component {
           >
           <Button onPressIn={()=> {this.onOpenChange()}}>目录</Button>
           <ScrollView style={{backgroundColor: "#fff", paddingHorizontal: 16}}>
-            <HTML html={htmlContent} imagesMaxWidth={Dimensions.get('window').width}
+            <HTML onLinkPress={(evt, href) => { Linking.openURL(href); }}
+              html={htmlContent}
+              imagesMaxWidth={Dimensions.get('window').width}
               renderers= {{
                 img: function(htmlAttribs, children, convertedCSSStyles, passProps = {}) {
                   if (!htmlAttribs.src) {
