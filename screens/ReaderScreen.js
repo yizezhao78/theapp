@@ -1,38 +1,27 @@
 import { createElement } from 'react'
 import React from 'react';
-import { View, Text, WebView, Alert, Image, ScrollView } from 'react-native';
+import { View, Text, WebView, Alert, Image, ScrollView, Dimensions, Button as NativeButton, Linking } from 'react-native';
 import { Drawer, List, NavBar, Icon, Button } from 'antd-mobile';
 var xxscData = require('../xxsc_data_js/data.js');
 var menuData = require('../xxsc_data_js/menu.js');
-import Markdown from 'react-native-simple-markdown'
-import images from './image.js';
+import Remarkable from 'remarkable';
+import images from '../xxsc_data_js/image.js';
+import HTML from 'react-native-render-html';
 
-const markdownStyles = {
-  heading1: {
-    fontSize: 24,
-    color: 'purple',
-  },
-  link: {
-    color: 'pink',
-  },
-  mailTo: {
-    color: 'orange',
-  },
-  text: {
-    padding: 10,
-    color: '#000',
-    lineHeight: 30,
-    fontSize: 13
-  }
-}
 class ReaderScreen extends React.Component {
-  static navigationOptions = {
-    title: 'CSSA 新生手册',
+  static navigationOptions = ({ navigation }) => {
+    const { params = {} } = navigation.state;
+    return { title: 'CSSA 新生手册', headerRight: <NativeButton title="目录" onPress={ typeof params.onOpenChange !== 'undefined' ? params.onOpenChange : ()=> {}}></NativeButton>};
   };
+
   state = {
     open: false,
-    source: 'wind_Desktop_Developer_cssa_xxsc_README'
+    source: menuData["menuData"][Object.keys(menuData["menuData"])[0]]
   }
+  componentDidMount() {
+    this.props.navigation.setParams({ onOpenChange: this.onOpenChange });
+  }
+
   onOpenChange = (...args) => {
     this.setState({ open: !this.state.open });
   }
@@ -44,14 +33,11 @@ class ReaderScreen extends React.Component {
     })
   }
   render() {
-    var data = xxscData[this.state.source]
-    const markDownRules = {
-      image: {
-        react: (node, output, state) => (
-          <Image source={{uri: "https://media.giphy.com/media/dkGhBWE3SyzXW/giphy.gif"}} />
-        )
-      }
-    }
+    var originalMarkdownData = xxscData[this.state.source]
+    //把markdown转换成html
+    var md = new Remarkable();
+    var htmlContent = md.render(originalMarkdownData);
+    //再把html转成React Native Components
 
     const sidebar = (
       <List>
@@ -94,27 +80,33 @@ class ReaderScreen extends React.Component {
           >
           <Button onPressIn={()=> {this.onOpenChange()}}>目录</Button>
           <ScrollView style={{backgroundColor: "#fff", paddingHorizontal: 16}}>
-            <Markdown
-              styles={markdownStyles}
-              rules={{
-                image: {
-                  react: (node, output, state) => (
+            <HTML onLinkPress={(evt, href) => { Linking.openURL(href); }}
+              html={htmlContent}
+              imagesMaxWidth={Dimensions.get('window').width}
+              renderers= {{
+                img: function(htmlAttribs, children, convertedCSSStyles, passProps = {}) {
+                  if (!htmlAttribs.src) {
+                    return false;
+                  }
+                  const { src, alt, width, height } = htmlAttribs;
+                  const splitList = src.split("/")
+                  const imageName = splitList[splitList.length - 1]
+                  return (
                     <Image
-                      key={state.key}
-                      source={images[node.target]}
-                    />
-                  ),
-                },
-              }}
-            >
-            {data}
-            </Markdown>
-          </ScrollView>
-        </Drawer>
+                      source={images[imageName]}
+                      alt={alt}
+                      style={{width: Dimensions.get('window').width - 32, height: 200, resizeMode: 'contain'}}
+                      {...passProps}
+                      />
+                  );
+                }
+              }} />
+            </ScrollView>
+          </Drawer>
 
-      </View>
-    );
+        </View>
+      );
+    }
   }
-}
 
-export default ReaderScreen;
+  export default ReaderScreen;
